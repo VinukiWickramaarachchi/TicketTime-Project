@@ -45,7 +45,7 @@ exports.purchaseTicket = (req, res, io) => {
         io.emit("ticketsUpdated", events);
         return res.status(200).json({
           success: true,
-          message: `${quantity} ticket(s) purchased successfully!`,
+          message: `${quantity} ticket${quantity > 1 ? 's':''} purchased successfully!`,
         });
       }
     );
@@ -112,9 +112,14 @@ exports.addTickets = (req, res, io) => {
   if (events[eventId]) {
     events[eventId].tickets += ticketsToAdd;
     io.emit("ticketsUpdated", events);
+    if(ticketsToAdd > 1){
     return res
       .status(200)
-      .json({ success: true, message: "Tickets added successfully!" });
+      .json({ success: true, message: `${ticketsToAdd} Tickets added successfully!` })}
+      return res
+      .status(404)
+      .json({ success: false, message: "Ticket number should be more than 0!" })
+
   }
 
   res.status(400).json({ success: false, message: "Event not found!" });

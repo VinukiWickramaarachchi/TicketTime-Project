@@ -90,8 +90,9 @@ const VendorPanel = ({ user }) => {
     <div className="min-h-screen bg-[#0f1c35] py-8 px-4 sm:px-10 lg:px-8">
       <ToastContainer theme="dark" />
       <h2 className="text-3xl font-bold text-center text-white mb-8">
-        Welcome, {user.username} (Vendor)
+        Welcome, {user.username}
       </h2>
+      <h2 className="text-xl font-semibold text-center text-gray-300 mb-4">Admin</h2>
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Add Tickets Section */}
         <div className="bg-[#223b61] p-6 rounded-lg shadow-lg border border-sky-500">

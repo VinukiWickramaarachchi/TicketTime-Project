@@ -14,6 +14,13 @@ const users = {
     },
     {
       id: "c2",
+      username: "customer2",
+      password: "cust123",
+      role: "customer",
+      isVIP: false,
+    },
+    {
+      id: "c2",
       username: "vipCustomer",
       password: "vip123",
       role: "customer",
